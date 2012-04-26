@@ -1,7 +1,7 @@
 package lp2.lab09;
 
 import java.util.HashMap;
-
+// Egit suckz
 public class Usuario {
     private String nome;
     private int matricula;
