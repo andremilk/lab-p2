@@ -53,7 +53,7 @@ public class Usuario {
     public boolean temAtrasados() {
         Calendar hoje = new GregorianCalendar();
         for(Livro l: this.listaLivros) {
-            if(l.getDataDeLocacao().get(Calendar.DAY_OF_YEAR) - hoje.get(Calendar.DAY_OF_YEAR) > this.getTempoMaximo())
+            if(hoje.get(Calendar.DAY_OF_YEAR) - l.getDataDeLocacao().get(Calendar.DAY_OF_YEAR) > this.getTempoMaximo())
                 return false;
         }
         return true;
@@ -67,8 +67,5 @@ public class Usuario {
             }
         return false;
     }
-    
-    
-    
-    
+      
 }
