@@ -1,11 +1,13 @@
 package lp2.lab09;
 
-import java.util.HashMap;
-// Egit suckz
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Usuario {
     private String nome;
     private int matricula;
-    private HashMap hashLivros;
+    private ArrayList<Livro> listaLivros;
     private final int maxLivros = 3;
     private int tempoMaximo;
     public static enum userType {
@@ -37,6 +39,24 @@ public class Usuario {
     }
     public int getMaxLivros() {
         return maxLivros;
+    }
+    
+    public boolean temAtrasados() {
+        Calendar hoje = new GregorianCalendar();
+        for(Livro l: this.listaLivros) {
+            if(l.getDataDeLocacao().get(Calendar.DAY_OF_YEAR) - hoje.get(Calendar.DAY_OF_YEAR) > this.getTempoMaximo())
+                return false;
+        }
+        return true;
+    }
+    
+    public boolean alugarLivro(Livro livro) {
+        if(this.listaLivros.size() < 3)
+            if(!this.temAtrasados()) {
+                this.listaLivros.add(livro);
+                return true;
+            }
+        return false;
     }
     
     
