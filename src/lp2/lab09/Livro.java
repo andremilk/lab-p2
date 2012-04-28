@@ -5,23 +5,84 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+/**
+ * Classe Livro (Poe aqui a explicacao, markin RSRS)
+ * @author Andre Luiz Guimaraes de Souza Leite
+ * @author Marcus Antonio Rocha Tenorio
+ * 
+ * 
+ */
 public class Livro {
     
+    /**
+     * Titulo do livro
+     */
     private String titulo;
+    
+    /**
+     * Verdadeiro se o livro e alugavel e falso caso contrario
+     */
     private boolean alugavel;
+    
+    /**
+     * Lista de autores de um livro
+     */
     private ArrayList<String> autores;
+    
+    /**
+     * Nome da editora que publicou o livro
+     */
     private String editora;
+    
+    /**
+     * Status de um livro
+     * @author dekozo
+     *
+     */
     public enum Status {
         DISPONIVEL, EMPRESTADO, RESERVADO
     }
+    
+    /**
+     * Array de status de um livro, um livro pode ter mais de um status
+     */
     private Status[] status; 
+    
+    /**
+     * Edicao de um livro
+     */
     private String edicao;
+    
+    /**
+     * Ano de publicacao do livro
+     */
     private int anoDePublicacao;
+    
+    /**
+     * Numero de exemplares cadastrados do livro
+     */
     private static long exemplares;
+    
+    /**
+     * Total de exemplares disponiveis no momento
+     */
     private static long disponiveis;
+    
+    /**
+     * Data de locacao de um livro
+     * Este atributo so e utilizado caso o livro seja locado, nao no cadastro da biblioteca
+     */
     private Calendar dataDeLocacao;
 
-    
+    /**
+     * Construtor da classe Livro que recebe todas as informacoes do livro
+     * @param titulo titulo do livro a ser cadastrado
+     * @param alugavel true se o livro for alugavel, false caso contrario
+     * @param autores lista de autores do livro
+     * @param editora editora que publica o livro
+     * @param edicao edicao do livro
+     * @param anoDePublicacao ano de publicacao do livro
+     */
     public Livro(String titulo, boolean alugavel, ArrayList<String> autores,
             String editora, String edicao, int anoDePublicacao) {
         this.titulo = titulo;
@@ -31,7 +92,13 @@ public class Livro {
         this.edicao = edicao;
         this.anoDePublicacao = anoDePublicacao;
     }
-    public Livro(Livro livro) {
+    
+    /**
+     * Construtor da classe Livro que recebe outro Livro.
+     * Este construtor servirá apenas para outro construtor que e usado na locacao de um livro
+     * @param livro livro a ser locado
+     */
+    private Livro(Livro livro) {
         this.setTitulo(livro.getTitulo());
         this.setAlugavel(livro.getAlugavel());
         this.setAutores(livro.getAutores());
@@ -40,72 +107,180 @@ public class Livro {
         this.setAnoDePublicacao(livro.getAnoDePublicacao());
     }
  
+    /**
+     * Construtor usado para locacao de um livro
+     * @param livro livro a ser locado
+     * @param locacao data de locacao do livro
+     */
     public Livro(Livro livro, Calendar locacao) {
         this(livro);
         this.dataDeLocacao = new GregorianCalendar();
     }
     
+    /**
+     * get do atributo alugavel
+     * @return verdadeiro se for alugavel, falso se nao for
+     */
     private boolean getAlugavel() {
         return this.alugavel;
     }
+    
+    /**
+     * get do atributo titulo
+     * @return titulo do livro
+     */
     public String getTitulo() {
         return titulo;
     }
+    
+    /**
+     * set do atributo titulo 
+     * @param titulo titulo a ser usado
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+    
+    /**
+     * metodo para saber se o livro e ou nao alugavel
+     * @return true se for alugavel, false caso contrario
+     */
     public boolean isAlugavel() {
         return alugavel;
     }
+    
+    /**
+     * set do atributo alugavel
+     * @param alugavel true para alugavel, false para nao alugavel
+     */
     public void setAlugavel(boolean alugavel) {
         this.alugavel = alugavel;
     }
+    
+    /**
+     * get dos autores
+     * @return lista de autores do livro
+     */
     public ArrayList<String> getAutores() {
         return autores;
     }
+    
+    /**
+     * set dos autores
+     * @param autores lista de autores a ser setada
+     */
     public void setAutores(ArrayList<String> autores) {
         this.autores = autores;
     }
+    
+    /**
+     * get do atributo editora
+     * @return editora do livro
+     */
     public String getEditora() {
         return editora;
     }
+    
+    /**
+     * set do atributo editora
+     * @param editora editora a ser setada
+     */
     public void setEditora(String editora) {
         this.editora = editora;
     }
+    
+    /**
+     * get do atributo edicao
+     * @return edicao do livro
+     */
     public String getEdicao() {
         return edicao;
     }
+    
+    /**
+     * set do atributo edicao
+     * @param edicao edicao a ser setada
+     */
     public void setEdicao(String edicao) {
         this.edicao = edicao;
     }
+    
+    /**
+     * get do ano de publicacao do livro
+     * @return ano de publicacao do livro
+     */
     public int getAnoDePublicacao() {
         return anoDePublicacao;
     }
+    
+    /**
+     * set do ano de publicacao do livro
+     * @param anoDePublicacao ano de publicacao a ser setado
+     */
     public void setAnoDePublicacao(int anoDePublicacao) {
         this.anoDePublicacao = anoDePublicacao;
     }
+    
+    /**
+     * get do atributo exemplares
+     * @return numero de exemplares cadastrados do livro
+     */
     public long getExemplares() {
         return exemplares;
     }
+    
+    /**
+     * set do atributo exemplares
+     * @param exemplares numero de exemplares cadastrados do livro
+     */
     public void setExemplares(long exemplares) {
         Livro.exemplares = exemplares;
     }
+    
+    /**
+     * get do atributo disponiveis
+     * @return numero de exemplares disponiveis do livro
+     */
     public long getDisponiveis() {
         return disponiveis;
     }
+    
+    /**
+     * set do atributo disponveis
+     * @param disponiveis numero de exemplares disponiveis a ser setado
+     */
     public static void setDisponiveis(long disponiveis) {
         Livro.disponiveis = disponiveis;
     }
 
+    /**
+     * get do atributo status
+     * @return retorna os status do livro
+     */
     public Status[] getStatus() {
         return status;
     }
+    
+    /**
+     * get do atributo dataDeLocacao
+     * @return um objeto Calendar criado com a data de locacao
+     */
     public Calendar getDataDeLocacao() {
         return dataDeLocacao;
     }
+    
+    /**
+     * set do atributo dataDeLocacao
+     * @param dataDeLocacao Calendar da data de locacao
+     */
     public void setDataDeLocacao(Calendar dataDeLocacao) {
         this.dataDeLocacao = dataDeLocacao;
     }
+    
+    /**
+     * metodo que aluga o livro
+     * @return true se o livro foi alugado, false caso contrario
+     */
     public boolean serAlugado() {
         if(this.isAlugavel() && this.getDisponiveis() > 0) {
             this.setExemplares(this.getExemplares() - 1);
@@ -113,6 +288,11 @@ public class Livro {
         }
         return false;
     }
+    
+    /**
+     * metodo para devolucao do livro
+     * @return true
+     */
     public boolean serDevolvido() {
         this.setExemplares(this.getExemplares() + 1);
         return true;
