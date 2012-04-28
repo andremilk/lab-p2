@@ -10,7 +10,7 @@ public class Usuario {
     private int matricula;
     private ArrayList<Livro> listaLivros;
     private final int maxLivros = 3;
-    private int tempoMaximo;
+    private int tempoMaximo; 
     public static enum userType {
         ALUNO, PROFESSOR
     }

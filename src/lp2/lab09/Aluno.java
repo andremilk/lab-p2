@@ -4,7 +4,12 @@ public class Aluno extends Usuario {
 
     public Aluno(String nome, int matricula, int tempoMaximo) {
         super(nome, matricula, tempoMaximo);
-        // TODO Auto-generated constructor stub
+        
+    }
+    
+    @Override
+    public int getTempoMaximo() {
+        return 30;
     }
 
 }
