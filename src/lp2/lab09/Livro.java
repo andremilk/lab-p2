@@ -126,7 +126,6 @@ public class Livro {
     }
     
     /**
-     * get do atributo titulo
      * @return titulo do livro
      */
     public String getTitulo() {
@@ -134,7 +133,6 @@ public class Livro {
     }
     
     /**
-     * set do atributo titulo 
      * @param titulo titulo a ser usado
      */
     public void setTitulo(String titulo) {
@@ -142,7 +140,6 @@ public class Livro {
     }
     
     /**
-     * metodo para saber se o livro e ou nao alugavel
      * @return true se for alugavel, false caso contrario
      */
     public boolean isAlugavel() {
@@ -150,7 +147,6 @@ public class Livro {
     }
     
     /**
-     * set do atributo alugavel
      * @param alugavel true para alugavel, false para nao alugavel
      */
     public void setAlugavel(boolean alugavel) {
@@ -158,7 +154,6 @@ public class Livro {
     }
     
     /**
-     * get dos autores
      * @return lista de autores do livro
      */
     public ArrayList<String> getAutores() {
@@ -166,7 +161,6 @@ public class Livro {
     }
     
     /**
-     * set dos autores
      * @param autores lista de autores a ser setada
      */
     public void setAutores(ArrayList<String> autores) {
@@ -174,7 +168,6 @@ public class Livro {
     }
     
     /**
-     * get do atributo editora
      * @return editora do livro
      */
     public String getEditora() {
@@ -182,7 +175,6 @@ public class Livro {
     }
     
     /**
-     * set do atributo editora
      * @param editora editora a ser setada
      */
     public void setEditora(String editora) {
@@ -190,7 +182,6 @@ public class Livro {
     }
     
     /**
-     * get do atributo edicao
      * @return edicao do livro
      */
     public String getEdicao() {
@@ -198,7 +189,6 @@ public class Livro {
     }
     
     /**
-     * set do atributo edicao
      * @param edicao edicao a ser setada
      */
     public void setEdicao(String edicao) {
@@ -206,7 +196,6 @@ public class Livro {
     }
     
     /**
-     * get do ano de publicacao do livro
      * @return ano de publicacao do livro
      */
     public int getAnoDePublicacao() {
@@ -214,7 +203,6 @@ public class Livro {
     }
     
     /**
-     * set do ano de publicacao do livro
      * @param anoDePublicacao ano de publicacao a ser setado
      */
     public void setAnoDePublicacao(int anoDePublicacao) {
@@ -222,7 +210,6 @@ public class Livro {
     }
     
     /**
-     * get do atributo exemplares
      * @return numero de exemplares cadastrados do livro
      */
     public long getExemplares() {
@@ -230,7 +217,6 @@ public class Livro {
     }
     
     /**
-     * set do atributo exemplares
      * @param exemplares numero de exemplares cadastrados do livro
      */
     public void setExemplares(long exemplares) {
@@ -238,7 +224,6 @@ public class Livro {
     }
     
     /**
-     * get do atributo disponiveis
      * @return numero de exemplares disponiveis do livro
      */
     public long getDisponiveis() {
@@ -246,7 +231,6 @@ public class Livro {
     }
     
     /**
-     * set do atributo disponveis
      * @param disponiveis numero de exemplares disponiveis a ser setado
      */
     public static void setDisponiveis(long disponiveis) {
@@ -254,7 +238,6 @@ public class Livro {
     }
 
     /**
-     * get do atributo status
      * @return retorna os status do livro
      */
     public Status[] getStatus() {
@@ -262,7 +245,6 @@ public class Livro {
     }
     
     /**
-     * get do atributo dataDeLocacao
      * @return um objeto Calendar criado com a data de locacao
      */
     public Calendar getDataDeLocacao() {
@@ -270,7 +252,6 @@ public class Livro {
     }
     
     /**
-     * set do atributo dataDeLocacao
      * @param dataDeLocacao Calendar da data de locacao
      */
     public void setDataDeLocacao(Calendar dataDeLocacao) {
@@ -278,7 +259,6 @@ public class Livro {
     }
     
     /**
-     * metodo que aluga o livro
      * @return true se o livro foi alugado, false caso contrario
      */
     public boolean serAlugado() {
