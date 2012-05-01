@@ -8,7 +8,6 @@ import java.util.GregorianCalendar;
 
 import lp2.lab09.Livro.Status;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 

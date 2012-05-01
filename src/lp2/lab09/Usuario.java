@@ -74,6 +74,15 @@ public class Usuario {
     public int getMatricula() {
         return matricula;
     }
+
+    /**
+     * 
+     * @return lista de livros do usuario
+     */
+    public ArrayList<Livro> getListaLivros() {
+        return listaLivros;
+    }
+
     
     /**
      * Seta a matricula do usuário
@@ -115,9 +124,9 @@ public class Usuario {
         Calendar hoje = new GregorianCalendar();
         for(Livro l: this.listaLivros) {
             if(hoje.get(Calendar.DAY_OF_YEAR) - l.getDataDeLocacao().get(Calendar.DAY_OF_YEAR) > this.getTempoMaximo())
-                return false;
+                return true;
         }
-        return true;
+        return false;
     }
     
     /**
