@@ -33,11 +33,6 @@ public class LivroTest {
         livroDois = new Livro("Livro um", false, autores, editora, edicao, 1989, 50);
     }
 
-    @After
-    public void tearDown() throws Exception {
-    }
-
-
     @Test
     public void testLivroLivroCalendar() {
         assertNotSame(livro, livroUm);
