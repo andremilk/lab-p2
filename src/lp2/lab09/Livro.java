@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
- * Classe livro, classe do programa que cria todos os atributos de livro (Status, Autores, Se o livro é alugavel ou não, nome da editora,edicao,numero de examplares)
+ * Classe que modela um livro e os comportamentos associados a ele
  * @author Andre Luiz Guimaraes de Souza Leite
  * @author Marcus Antonio Rocha Tenorio
  * 
