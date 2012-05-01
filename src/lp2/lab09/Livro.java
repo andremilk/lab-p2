@@ -1,7 +1,6 @@
 package lp2.lab09;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -46,7 +45,7 @@ public class Livro {
     /**
      * Array de status de um livro, um livro pode ter mais de um status
      */
-    private Status[] status; 
+    private Status status; 
     
     /**
      * Edicao de um livro
@@ -242,10 +241,16 @@ public class Livro {
     /**
      * @return retorna os status do livro
      */
-    public Status[] getStatus() {
+    public Status getStatus() {
         return status;
     }
     
+    /**
+     * @param Status do livro
+     */
+    public void setStatus(Status s) {
+        this.status = s;
+    }
     /**
      * @return um objeto Calendar criado com a data de locacao
      */
@@ -312,8 +317,6 @@ public class Livro {
             if (other.editora != null)
                 return false;
         } else if (!editora.equals(other.editora))
-            return false;
-        if (!Arrays.equals(status, other.status))
             return false;
         if (titulo == null) {
             if (other.titulo != null)
