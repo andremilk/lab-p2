@@ -1,7 +1,8 @@
 package lp2.lab09;
 
 /**
- * 
+ * Classe que modela um aluno.
+ * Esta classe serve para mudar o tempo maximo em que um usuario do tipo Aluno pode ficar com um livro.
  * @author Andre Luiz Guimaraes de Souza Leite
  * @author Marcus Antonio Rocha Tenorio
  *
