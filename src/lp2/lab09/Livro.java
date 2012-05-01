@@ -84,8 +84,10 @@ public class Livro {
      * @param anoDePublicacao ano de publicacao do livro
      */
     public Livro(String titulo, boolean alugavel, ArrayList<String> autores,
-            String editora, String edicao, int anoDePublicacao) {
+            String editora, String edicao, int anoDePublicacao, long exemplares) {
         this.titulo = titulo;
+        Livro.exemplares = exemplares;
+        Livro.disponiveis = exemplares;
         this.alugavel = alugavel;
         this.autores = autores;
         this.editora = editora;
