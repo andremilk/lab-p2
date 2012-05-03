@@ -22,8 +22,9 @@ public class Prova {
      * Construtor da classe Prova
      * @param peso peso da prova
      * @param nota nota da prova
+     * @throws Exception Exception lançada a ser tratada
      */
-    Prova(double peso, double nota) {
+    Prova(double peso, double nota) throws Exception {
         this.setPeso(peso);
         this.setNota(nota);
     }
@@ -54,9 +55,12 @@ public class Prova {
 
     /**
      * 
-     * @param nota nota a ser atribuida a prova
+     * @param nota nota a ser atribuida a prova, este valor nao deve ser menor que 0 ou maior que 10
+     * @throws Exception Exception lançada caso a nota seja invalida
      */
-    public void setNota(double nota) {
+    public void setNota(double nota) throws Exception {
+        if(nota > 10 || nota < 0)
+            throw new Exception("Nota inválida");
         this.nota = nota;
     }
 
