@@ -13,7 +13,7 @@ public class Aluno {
         this.setNome(nome);
         this.setMatricula(matricula);
         this.setCurso(curso);
-        this.addDisciplinas(disciplinas);
+        this.adicionarDisciplinas(disciplinas);
     }
     public String getNome() {
         return nome;
@@ -43,13 +43,13 @@ public class Aluno {
         return disciplinas;
     }
     
-    public void addDisciplina(Disciplina disc) {
+    public void adicionarDisciplina(Disciplina disc) {
         this.disciplinas.add(disc);
     }
     
-    public void addDisciplinas(ArrayList<Disciplina> disc) {
+    public void adicionarDisciplinas(ArrayList<Disciplina> disc) {
         for(Disciplina d: disc) {
-            this.addDisciplina(d);
+            this.adicionarDisciplina(d);
         }
     }
     
