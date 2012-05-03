@@ -17,24 +17,31 @@ public abstract class Disciplina {
         this.setNome(nome);
     }
     
-    private void setNome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
+    }
+    
+    public String getNome() {
+        return this.nome;
     }
     
     public Estado getEstado() {
         return estado;
     }
+    
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
-    public abstract int getCreditos();
-    
+        
     public void setCreditos(int creditos) {
         this.creditos = creditos;
     }
+    
     public ArrayList<Prova> getProvas() {
         return provas;
     }
     
+    public abstract int getCreditos();
+    public abstract void adicionarProva();
 
 }
