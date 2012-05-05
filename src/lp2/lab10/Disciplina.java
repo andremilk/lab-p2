@@ -134,6 +134,7 @@ public abstract class Disciplina {
             this.setMediaFinal(this.getMediaParcial());
         Prova provaFinal = new Prova(4, DataHandler.entradaNota("Digite a nota da prova final"));
         this.setMediaFinal(((this.getMediaParcial() * 6) + (provaFinal.getNota() * 4))/10);
+        this.setEstado(Estado.CONCLUIDA);
     }
 
 }

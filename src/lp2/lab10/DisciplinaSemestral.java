@@ -5,13 +5,11 @@ public class DisciplinaSemestral extends Disciplina {
     private final int MAX_PROVAS = 3;
 
     public DisciplinaSemestral(String nome, Estado estado) {
-        super(nome, estado);
-        // TODO Auto-generated constructor stub
+        super(nome, Estado.CURSANDO);
     }
 
     @Override
     public int getCreditos() {
-        // TODO Auto-generated method stub
         return 60;
     }
 

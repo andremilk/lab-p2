@@ -7,13 +7,11 @@ public class DisciplinaAnual extends Disciplina {
     private final int MAX_PROVAS = 6;
 
     public DisciplinaAnual(String nome, Estado estado) {
-        super(nome, estado);
-        // TODO Auto-generated constructor stub
+        super(nome, Estado.CURSANDO);
     }
 
     @Override
     public int getCreditos() {
-        // TODO Auto-generated method stub
         return 120;
     }
 

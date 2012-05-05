@@ -5,7 +5,7 @@ public class DisciplinaTrimestral extends Disciplina {
     private final int MAX_PROVAS = 2;
     
     public DisciplinaTrimestral(String nome, Estado estado) {
-        super(nome, estado);
+        super(nome, Estado.CURSANDO);
     }
 
     /**
