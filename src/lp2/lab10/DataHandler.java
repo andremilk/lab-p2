@@ -11,12 +11,6 @@ public class DataHandler {
         return entrada.nextDouble(); 
     }
     
-    public static void printDisciplina(String nome, int creditos, double media) {
-        System.out.print(nome + "\t");
-        System.out.printf("(%d)", creditos);
-        System.out.print("nota " + media);
-    }
-
 }
 
 
