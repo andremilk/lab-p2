@@ -2,9 +2,10 @@ package lp2.lab10;
 
 public class DisciplinaTrimestral extends Disciplina {
 
+    private final int MAX_PROVAS = 2;
+    
     public DisciplinaTrimestral(String nome, Estado estado) {
         super(nome, estado);
-        
     }
 
     /**
@@ -21,9 +22,10 @@ public class DisciplinaTrimestral extends Disciplina {
      */
     @Override
     public void adicionarProva() throws Exception {
-        if(this.getProvas().size() >= 2)
+        if(this.getProvas().size() >= MAX_PROVAS)
             return;
-        this.getProvas().add(new Prova(4, DataHandler.entradaNota()));
+        int tamLista = this.getProvas().size();
+        this.getProvas().add(new Prova((tamLista == 0 ? 4: 6), DataHandler.entradaNota()));
     }
 
 }
