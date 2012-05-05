@@ -137,4 +137,11 @@ public abstract class Disciplina {
         this.setEstado(Estado.CONCLUIDA);
     }
 
+    @Override
+    public String toString() {
+        return "Disciplina " + nome + " (" + getCreditos() + ")" + "nota " + mediaFinal;
+    }
+    
+    
+
 }
