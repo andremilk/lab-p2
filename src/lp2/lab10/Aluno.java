@@ -58,7 +58,7 @@ public class Aluno {
         double carga = 0;
         for(Disciplina d: this.getDisciplinas()) {
             if(d.getEstado() == Estado.CONCLUIDA) {
-                DataHandler.printDisciplina(d.getNome(), d.getCreditos(), d.getMediaFinal());
+                System.out.print(d);
                 produtos += (d.getMediaFinal() * d.getCreditos());
                 carga += d.getCreditos();
             }
