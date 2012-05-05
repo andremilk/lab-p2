@@ -40,6 +40,11 @@ public abstract class Disciplina {
     private double mediaParcial;
     
     /**
+     * Atributo da media final
+     */
+    private double mediaFinal;
+    
+    /**
      * Construtor principal da classe Disciplina
      * @param nome nome a ser atribuido a disciplina
      * @param creditos numero de creditos a ser atribuido a disciplina
@@ -114,6 +119,21 @@ public abstract class Disciplina {
 
     public void setMediaParcial(double mediaParcial) {
         this.mediaParcial = mediaParcial;
+    }
+    
+    public double getMediaFinal() {
+        return this.mediaFinal;
+    }
+    
+    public void setMediaFinal(double mediaFinal) {
+        this.mediaFinal = mediaFinal;
+    }
+    
+    public void gerarFinal() throws Exception {
+        if(this.getMediaParcial() >= 7 || this.getMediaParcial() <= 4)
+            this.setMediaFinal(this.getMediaParcial());
+        Prova provaFinal = new Prova(4, DataHandler.entradaNota("Digite a nota da prova final"));
+        this.setMediaFinal(((this.getMediaParcial() * 6) + (provaFinal.getNota() * 4))/10);
     }
 
 }

@@ -17,9 +17,11 @@ public class DisciplinaSemestral extends Disciplina {
 
     @Override
     public void adicionarProva() throws Exception {
-        if(this.getProvas().size() >= MAX_PROVAS)
+        int tamLista = this.getProvas().size();
+        if(tamLista >= MAX_PROVAS)
             return;
-        this.getProvas().add(new Prova(1, DataHandler.entradaNota()));
+        String message = "Digite a prova de numero" + (tamLista + 1);
+        this.getProvas().add(new Prova(1, DataHandler.entradaNota(message)));
     }
 
     @Override
