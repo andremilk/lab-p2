@@ -96,5 +96,7 @@ public abstract class Disciplina {
      * @throws Exception 
      */
     public abstract void adicionarProva() throws Exception;
+    
+    public abstract double gerarParcial();
 
 }

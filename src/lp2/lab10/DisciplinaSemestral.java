@@ -22,4 +22,13 @@ public class DisciplinaSemestral extends Disciplina {
         this.getProvas().add(new Prova(1, DataHandler.entradaNota()));
     }
 
+    @Override
+    public double gerarParcial() {
+        double produtos = 0;
+        for(Prova p: this.getProvas()) {
+            produtos += (p.getNota() * p.getPeso());
+        }
+        return (produtos/this.getProvas().size());
+    }
+
 }

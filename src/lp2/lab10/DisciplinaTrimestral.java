@@ -28,4 +28,15 @@ public class DisciplinaTrimestral extends Disciplina {
         this.getProvas().add(new Prova((tamLista == 0 ? 4: 6), DataHandler.entradaNota()));
     }
 
+    @Override
+    public double gerarParcial() {
+        double pesos = 0;
+        double produtos = 0;
+        for(Prova p: this.getProvas()) {
+            pesos += p.getPeso();
+            produtos += (p.getNota() * p.getPeso());            
+        }
+        return (produtos/pesos);
+    }
+
 }
