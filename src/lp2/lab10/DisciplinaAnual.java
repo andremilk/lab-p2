@@ -2,15 +2,15 @@ package lp2.lab10;
 
 public class DisciplinaAnual extends Disciplina {
 
-    public DisciplinaAnual(String nome, int creditos, Estado estado) {
-        super(nome, creditos, estado);
+    public DisciplinaAnual(String nome, Estado estado) {
+        super(nome, estado);
         // TODO Auto-generated constructor stub
     }
 
     @Override
     public int getCreditos() {
         // TODO Auto-generated method stub
-        return 0;
+        return 120;
     }
 
     @Override

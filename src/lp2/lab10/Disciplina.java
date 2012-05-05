@@ -35,19 +35,13 @@ public abstract class Disciplina {
     private Estado estado;
     
     /**
-     * Numero de creditos da disciplina
-     */
-    private int creditos;
-    
-    /**
      * Construtor principal da classe Disciplina
      * @param nome nome a ser atribuido a disciplina
      * @param creditos numero de creditos a ser atribuido a disciplina
      * @param estado estado da disciplina, CURSANDO ou CONCLUIDA
      */
-    Disciplina(String nome, int creditos, Estado estado) {
+    Disciplina(String nome, Estado estado) {
         this.setNome(nome);
-        this.setCreditos(creditos);
         this.setEstado(estado);
     }
     
@@ -85,14 +79,6 @@ public abstract class Disciplina {
         
     /**
      * 
-     * @param creditos numero de creditos da disciplina a ser usado
-     */
-    public void setCreditos(int creditos) {
-        this.creditos = creditos;
-    }
-    
-    /**
-     * 
      * @return objetos do tipo Prova
      */
     public ArrayList<Prova> getProvas() {
@@ -107,7 +93,8 @@ public abstract class Disciplina {
     
     /**
      * Este metodo devera ser sobreescrito
+     * @throws Exception 
      */
-    public abstract void adicionarProva();
+    public abstract void adicionarProva() throws Exception;
 
 }
