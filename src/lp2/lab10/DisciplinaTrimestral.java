@@ -29,14 +29,13 @@ public class DisciplinaTrimestral extends Disciplina {
     }
 
     @Override
-    public double gerarParcial() {
+    public void gerarParcial() {
         double pesos = 0;
         double produtos = 0;
         for(Prova p: this.getProvas()) {
             pesos += p.getPeso();
             produtos += (p.getNota() * p.getPeso());            
         }
-        return (produtos/pesos);
+        this.setMediaParcial(produtos/pesos);
     }
-
 }

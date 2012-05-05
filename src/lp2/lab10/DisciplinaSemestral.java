@@ -23,12 +23,11 @@ public class DisciplinaSemestral extends Disciplina {
     }
 
     @Override
-    public double gerarParcial() {
+    public void gerarParcial() {
         double produtos = 0;
         for(Prova p: this.getProvas()) {
             produtos += (p.getNota() * p.getPeso());
         }
-        return (produtos/this.getProvas().size());
+        this.setMediaParcial((produtos/this.getProvas().size()));
     }
-
 }

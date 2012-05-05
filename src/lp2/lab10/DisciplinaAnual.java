@@ -30,13 +30,13 @@ public class DisciplinaAnual extends Disciplina {
     }
 
     @Override
-    public double gerarParcial() {
+    public void gerarParcial() {
         double primeiraParte = 0;
         ArrayList<Prova> p = this.getProvas();
         for(int i = 0; i <= 4; i++) {
             primeiraParte += p.get(i).getNota();
         }
-        return ((primeiraParte / 5) + (p.get(5).getNota() * p.get(5).getPeso()) / 10);
+        this.setMediaParcial(((primeiraParte / 5) + (p.get(5).getNota() * p.get(5).getPeso()) / 10));
     }
 
 }

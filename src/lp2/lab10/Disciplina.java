@@ -35,6 +35,11 @@ public abstract class Disciplina {
     private Estado estado;
     
     /**
+     * Atributo que guarda a media parcial da disciplina
+     */
+    private double mediaParcial;
+    
+    /**
      * Construtor principal da classe Disciplina
      * @param nome nome a ser atribuido a disciplina
      * @param creditos numero de creditos a ser atribuido a disciplina
@@ -87,7 +92,7 @@ public abstract class Disciplina {
     
     /**
      * Este metodo devera ser sobreescrito
-     * @return
+     * @return numero de horas da disciplina
      */
     public abstract int getCreditos();
     
@@ -97,6 +102,18 @@ public abstract class Disciplina {
      */
     public abstract void adicionarProva() throws Exception;
     
-    public abstract double gerarParcial();
+    /**
+     * Este metodo devera ser sobreescrito
+     * @return a media parcial da disciplina
+     */
+    public abstract void gerarParcial();
+    
+    public double getMediaParcial() {
+        return mediaParcial;
+    }
+
+    public void setMediaParcial(double mediaParcial) {
+        this.mediaParcial = mediaParcial;
+    }
 
 }
