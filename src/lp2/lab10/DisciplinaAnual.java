@@ -35,7 +35,7 @@ public class DisciplinaAnual extends Disciplina {
         for(int i = 0; i <= 4; i++) {
             primeiraParte += p.get(i).getNota();
         }
-        this.setMediaParcial((((primeiraParte / 5) * 4) + (p.get(5).getNota() * p.get(5).getPeso()) / 10));
+        this.setMediaParcial((((primeiraParte / 5) * 6) + (p.get(5).getNota() * p.get(5).getPeso()) / 10));
     }
 
 }
