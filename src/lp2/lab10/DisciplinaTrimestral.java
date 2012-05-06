@@ -5,7 +5,12 @@ public class DisciplinaTrimestral extends Disciplina {
     private final int MAX_PROVAS = 2;
     private final int CREDITOS = 30;
     
-    public DisciplinaTrimestral(String nome, Estado estado) {
+    /**
+     * Construtor da classe DisciplinaTrimestral
+     * @param nome nome da disciplina
+     * @param estado 
+     */
+    public DisciplinaTrimestral(String nome) {
         super(nome, Estado.CURSANDO);
     }
 
