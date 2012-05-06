@@ -3,6 +3,7 @@ package lp2.lab10;
 public class DisciplinaTrimestral extends Disciplina {
 
     private final int MAX_PROVAS = 2;
+    private final int CREDITOS = 30;
     
     public DisciplinaTrimestral(String nome, Estado estado) {
         super(nome, Estado.CURSANDO);
@@ -13,7 +14,7 @@ public class DisciplinaTrimestral extends Disciplina {
      */
     @Override
     public int getCreditos() {
-        return 30;
+        return CREDITOS;
     }
 
     /**
