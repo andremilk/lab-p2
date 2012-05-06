@@ -18,7 +18,7 @@ public class DisciplinaTrimestral extends Disciplina {
 
     /**
      * Adiciona provas (maximo de 2 provas) 
-     * @throws Exception 
+     * @throws Exception Excecao lancada caso a nota da prova seja invalida
      */
     @Override
     public void adicionarProva() throws Exception {
@@ -29,6 +29,9 @@ public class DisciplinaTrimestral extends Disciplina {
         this.getProvas().add(new Prova((tamLista == 0 ? 4: 6), DataHandler.entradaNota(message)));
     }
 
+    /**
+     * Metodo que gera a media parcial da disciplina e ja usa o set correspondente
+     */
     @Override
     public void gerarParcial() {
         double pesos = 0;
