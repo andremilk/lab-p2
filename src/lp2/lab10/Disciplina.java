@@ -113,22 +113,44 @@ public abstract class Disciplina {
      */
     public abstract void gerarParcial();
     
+    /**
+     * Metodo que retorna a media parcial
+     * @return media parcial
+     */
     public double getMediaParcial() {
         return mediaParcial;
     }
 
+    /**
+     * 
+     * @param mediaParcial media parcial a ser usada
+     */
     public void setMediaParcial(double mediaParcial) {
         this.mediaParcial = mediaParcial;
     }
     
+    /**
+     * 
+     * @return media final obtida na disciplina
+     */
     public double getMediaFinal() {
         return this.mediaFinal;
     }
     
+    /**
+     * 
+     * @param mediaFinal media final a ser usada para a disciplina
+     */
     public void setMediaFinal(double mediaFinal) {
         this.mediaFinal = mediaFinal;
     }
     
+    /**
+     * Este metodo gera a media final da disciplina.
+     * Se a media parcial for maior ou igual a 7, menor ou igual a 4, esta sera utilizada como media final
+     * caso contrario outra prova devera ser feita
+     * @throws Exception Excecao lançada caso a nota seja invalida
+     */
     public void gerarFinal() throws Exception {
         if(this.getMediaParcial() >= 7 || this.getMediaParcial() <= 4)
             this.setMediaFinal(this.getMediaParcial());
