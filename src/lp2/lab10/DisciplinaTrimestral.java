@@ -8,14 +8,15 @@ public class DisciplinaTrimestral extends Disciplina {
     /**
      * Construtor da classe DisciplinaTrimestral
      * @param nome nome da disciplina
-     * @param estado 
+     * 
      */
     public DisciplinaTrimestral(String nome) {
         super(nome, Estado.CURSANDO);
     }
 
     /**
-     * return retorna o numero de horas da disciplina trimestral, 30 horas
+     * Metodo que retorna o numero de creditos
+     * @return 30
      */
     @Override
     public int getCreditos() {
