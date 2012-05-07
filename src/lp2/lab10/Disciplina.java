@@ -166,13 +166,32 @@ public abstract class Disciplina {
      * @throws Exception Excecao lançada caso a nota seja invalida
      */
     public void gerarFinal() throws Exception {
-        if(this.getMediaParcial() >= 7 || this.getMediaParcial() <= 4)
+        if(this.taNaFinal())
             this.setMediaFinal(this.getMediaParcial());
         Prova provaFinal = new Prova(4, DataHandler.entradaNota("Digite a nota da prova final"));
         this.setMediaFinal(((this.getMediaParcial() * 6) + (provaFinal.getNota() * 4))/10);
         this.setEstado(Estado.CONCLUIDA);
     }
+    
+    /**
+     * Metodo que printa na tela quanto o aluno precisa na final
+     */
+    public void quantoParaFinal() {
+        if(this.taNaFinal())
+            return;
+        double nota = (50 - 6*this.getMediaParcial())*4;
+        System.out.println("Para a prova final voce precisa de: " + nota);
+    }
 
+    /**
+     * Metodo para checar se o aluno foi para final na disciplina
+     * @return true se estiver na final, false caso contrario
+     */
+    private boolean taNaFinal() {
+        if(this.getMediaParcial() >= 7 || this.getMediaParcial() <= 4)
+            return true;
+        return false;
+    }
     @Override
     public String toString() {
         return "Disciplina " + nome + " (" + getCreditos() + ")" + "nota " + mediaFinal;
