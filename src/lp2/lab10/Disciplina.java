@@ -56,7 +56,7 @@ public abstract class Disciplina {
     }
     
     /**
-     * 
+     * Metodo para setar o nome da disciplina
      * @param nome nome da disciplina
      */
     public void setNome(String nome) {
@@ -64,7 +64,7 @@ public abstract class Disciplina {
     }
     
     /**
-     * 
+     * Metodo que retorna o nome da disciplina
      * @return retorna o nome usado da disciplina
      */
     public String getNome() {
@@ -80,7 +80,7 @@ public abstract class Disciplina {
     }
     
     /**
-     * 
+     * Metodo que seta o estado da disciplina
      * @param estado Estado.CURSANDO ou Estado.CONCLUIDA
      */
     public void setEstado(Estado estado) {
@@ -88,7 +88,7 @@ public abstract class Disciplina {
     }
         
     /**
-     * 
+     * Metodo que retorna um ArrayList de objetos Prova
      * @return objetos do tipo Prova
      */
     public ArrayList<Prova> getProvas() {
@@ -109,7 +109,7 @@ public abstract class Disciplina {
     
     /**
      * Este metodo devera ser sobreescrito
-     * @return a media parcial da disciplina
+     * 
      */
     public abstract void gerarParcial();
     
@@ -122,7 +122,7 @@ public abstract class Disciplina {
     }
 
     /**
-     * 
+     * Metodo que seta a media parcial
      * @param mediaParcial media parcial a ser usada
      */
     public void setMediaParcial(double mediaParcial) {
@@ -130,7 +130,7 @@ public abstract class Disciplina {
     }
     
     /**
-     * 
+     * Metodo que retorna a media final
      * @return media final obtida na disciplina
      */
     public double getMediaFinal() {
@@ -138,7 +138,7 @@ public abstract class Disciplina {
     }
     
     /**
-     * 
+     * Metodo que seta a media final
      * @param mediaFinal media final a ser usada para a disciplina
      */
     public void setMediaFinal(double mediaFinal) {
