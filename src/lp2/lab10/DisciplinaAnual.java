@@ -5,16 +5,28 @@ import java.util.ArrayList;
 public class DisciplinaAnual extends Disciplina {
 
     private final int MAX_PROVAS = 6;
+    private final int CREDITOS = 120;
 
-    public DisciplinaAnual(String nome, Estado estado) {
+    /**
+     * Construtor da classe DisciplinaAnual de 120 creditos
+     * @param nome nome da disciplina
+     */
+    public DisciplinaAnual(String nome) {
         super(nome, Estado.CURSANDO);
     }
 
+    /**
+     * Retorna o numero de creditos da disciplina anual, 120 horas
+     */
     @Override
     public int getCreditos() {
-        return 120;
+        return CREDITOS;
     }
 
+    /**
+     * Adiciona provas (maximo de 6 provas) 
+     * @throws Exception Excecao lancada caso a nota da prova seja invalida
+     */
     @Override
     public void adicionarProva() throws Exception {
         int tamLista = this.getProvas().size();
@@ -28,6 +40,9 @@ public class DisciplinaAnual extends Disciplina {
         this.getProvas().add(new Prova((tamLista <= 5 ? 1: 4), DataHandler.entradaNota(message)));
     }
 
+    /**
+     * Gera a media parcial da disciplina anual
+     */
     @Override
     public void gerarParcial() {
         double primeiraParte = 0;
