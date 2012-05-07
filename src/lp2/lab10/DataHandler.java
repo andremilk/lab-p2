@@ -26,6 +26,43 @@ public class DataHandler {
         return new Aluno(nome, matricula, curso);
     }
     
+    public static int menu() {
+        System.out.println("Menu do sistema GiraHistorico");
+        System.out.println("1) Adicionar disciplina");
+        System.out.println("2) Cadastrar nota em disciplina");
+        System.out.println("3) Media parcial das disciplinas");
+        System.out.println("4) Quanto para a final?");
+        System.out.println("5) Cadastrar prova final");
+        System.out.println("6) Visualizar histórico");
+        System.out.println("0) Sair");
+        return entrada.nextInt();
+    }
+    
+    public static Disciplina addDisciplinaMenu() {
+        int tipo;
+        
+        do {
+            System.out.println("Escolha o tipo de disciplina\n1) Trimestral\n2)Semestral\n3)Anual");
+            System.out.println("Disciplina: ");
+            tipo = entrada.nextInt();
+        } while(tipo > 3 || tipo < 1);
+        
+        System.out.println("Nome da disciplina :");
+        String nome = entrada.nextLine();
+        
+        System.out.println("Periodo: ");
+        int periodo = entrada.nextInt();
+        switch(tipo) {
+            case 1:
+                return new DisciplinaTrimestral(nome, periodo);
+            case 2:
+                return new DisciplinaSemestral(nome, periodo);
+            case 3:
+                return new DisciplinaAnual(nome, periodo);
+        }
+        return null;
+    }
+    
 }
 
 
