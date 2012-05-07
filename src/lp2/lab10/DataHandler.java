@@ -10,6 +10,21 @@ public class DataHandler {
         System.out.println(message);
         return entrada.nextDouble(); 
     }
+        
+    public static Aluno introMenu() {
+        System.out.println("Bem vindo ao sistema GiraHistorico");
+        
+        System.out.println("Digite o seu nome: ");
+        String nome = entrada.nextLine();
+        
+        System.out.println("Digite sua matricula: ");
+        long matricula = entrada.nextLong();
+        
+        System.out.println("Digite o seu curso: ");
+        String curso = entrada.nextLine();
+        
+        return new Aluno(nome, matricula, curso);
+    }
     
 }
 
