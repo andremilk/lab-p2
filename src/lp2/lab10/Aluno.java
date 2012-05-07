@@ -104,6 +104,7 @@ public class Aluno {
      * Metodo que gera o historico do aluno listando apenas disciplinas concluidas e informa o CRA
      */
     public void gerarHistorico() {
+        System.out.println(this);
         double produtos = 0;
         double carga = 0;
         for(Disciplina d: this.getDisciplinas()) {
@@ -113,7 +114,16 @@ public class Aluno {
                 carga += d.getCreditos();
             }
         }
-        System.out.println("CRA ... " + produtos/carga);
+        if(this.getDisciplinas().size() != 0)
+            System.out.println("CRA ... " + produtos/carga);
+        else
+            System.out.println("Sem disciplinas cursadas");
         
+    }
+
+    @Override
+    public String toString() {
+        return "Aluno \n" + "Nome: " +  nome + "\nMatricula: " + matricula
+                + "\nCurso: " + curso;
     }
 }
