@@ -11,8 +11,8 @@ public class DisciplinaAnual extends Disciplina {
      * Construtor da classe DisciplinaAnual de 120 creditos
      * @param nome nome da disciplina
      */
-    public DisciplinaAnual(String nome) {
-        super(nome, Estado.CURSANDO);
+    public DisciplinaAnual(String nome, int periodo) {
+        super(nome, periodo);
     }
 
     /**

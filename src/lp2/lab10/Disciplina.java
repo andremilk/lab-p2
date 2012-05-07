@@ -45,14 +45,20 @@ public abstract class Disciplina {
     private double mediaFinal;
     
     /**
+     * Periodo ao qual pertence a disciplina 
+     */
+    private int periodo;
+    
+    /**
      * Construtor principal da classe Disciplina
      * @param nome nome a ser atribuido a disciplina
      * @param creditos numero de creditos a ser atribuido a disciplina
      * @param estado estado da disciplina, CURSANDO ou CONCLUIDA
      */
-    Disciplina(String nome, Estado estado) {
+    Disciplina(String nome, int periodo) {
         this.setNome(nome);
-        this.setEstado(estado);
+        this.setEstado(Estado.CURSANDO);
+        this.setPeriodo(periodo);
     }
     
     /**
@@ -145,6 +151,14 @@ public abstract class Disciplina {
         this.mediaFinal = mediaFinal;
     }
     
+    public int getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(int periodo) {
+        this.periodo = periodo;
+    }
+
     /**
      * Este metodo gera a media final da disciplina.
      * Se a media parcial for maior ou igual a 7, menor ou igual a 4, esta sera utilizada como media final

@@ -10,8 +10,8 @@ public class DisciplinaTrimestral extends Disciplina {
      * @param nome nome da disciplina
      * 
      */
-    public DisciplinaTrimestral(String nome) {
-        super(nome, Estado.CURSANDO);
+    public DisciplinaTrimestral(String nome, int periodo) {
+        super(nome, periodo);
     }
 
     /**

@@ -9,8 +9,8 @@ public class DisciplinaSemestral extends Disciplina {
      * Construtor da classe DisciplinaSemestral
      * @param nome nome da disciplina
      */
-    public DisciplinaSemestral(String nome) {
-        super(nome, Estado.CURSANDO);
+    public DisciplinaSemestral(String nome, int periodo) {
+        super(nome, periodo);
     }
 
     /**
