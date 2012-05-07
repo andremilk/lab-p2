@@ -24,7 +24,9 @@ public class DisciplinaAnual extends Disciplina {
     }
 
     /**
-     * Adiciona provas (maximo de 6 provas) 
+     * Adiciona provas (maximo de 6 provas)
+     * As 5 primeiras provas tem peso 1 (formam uma media aritmetica que tera peso 6)
+     * a ultima prova tem peso 4
      * @throws Exception Excecao lancada caso a nota da prova seja invalida
      */
     @Override
@@ -32,10 +34,6 @@ public class DisciplinaAnual extends Disciplina {
         int tamLista = this.getProvas().size();
         if(tamLista >= MAX_PROVAS)
             return;
-        /**
-         * As 5 primeiras provas tem peso 1 (formam uma media aritmetica que tera peso 6)
-         * a ultima prova tem peso 4
-         */
         String message = "Digite a prova de numero" + (tamLista + 1);
         this.getProvas().add(new Prova((tamLista <= 5 ? 1: 4), DataHandler.entradaNota(message)));
     }
