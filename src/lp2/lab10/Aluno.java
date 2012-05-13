@@ -100,6 +100,14 @@ public class Aluno {
         this.disciplinas.add(disc);
     }
     
+    public ArrayList<Disciplina> getListaStatus(Estado estado) {
+        ArrayList<Disciplina> disciplinasStatus = new ArrayList<Disciplina>();
+        for(Disciplina d: this.getDisciplinas())
+            if(d.getEstado() == estado)
+                disciplinasStatus.add(d);
+        return disciplinasStatus;
+    }
+    
     /**
      * Metodo que gera o historico do aluno listando apenas disciplinas concluidas e informa o CRA
      */
@@ -107,13 +115,12 @@ public class Aluno {
         System.out.println(this);
         double produtos = 0;
         double carga = 0;
-        for(Disciplina d: this.getDisciplinas()) {
-            if(d.getEstado() == Estado.CONCLUIDA) {
-                System.out.print(d);
-                produtos += (d.getMediaFinal() * d.getCreditos());
-                carga += d.getCreditos();
+        for(Disciplina d: this.getListaStatus(Estado.CONCLUIDA)) {
+            System.out.print(d);
+            produtos += (d.getMediaFinal() * d.getCreditos());
+            carga += d.getCreditos();
             }
-        }
+        
         if(this.getDisciplinas().size() != 0)
             System.out.println("CRA ... " + produtos/carga);
         else
