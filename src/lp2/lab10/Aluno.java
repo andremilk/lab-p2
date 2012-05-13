@@ -100,6 +100,14 @@ public class Aluno {
         this.disciplinas.add(disc);
     }
     
+    public void gerarParciais() {
+        for(Disciplina d: this.getListaStatus(Estado.CURSANDO)) {
+            d.gerarParcial();
+            System.out.println(d + "\n");
+        }
+            
+    }
+    
     public ArrayList<Disciplina> getListaStatus(Estado estado) {
         ArrayList<Disciplina> disciplinasStatus = new ArrayList<Disciplina>();
         for(Disciplina d: this.getDisciplinas())
