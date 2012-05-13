@@ -240,7 +240,8 @@ public abstract class Disciplina {
     }
     @Override
     public String toString() {
-        return "Disciplina " + nome + " (" + getCreditos() + ")" + "nota " + mediaFinal;
+        String nota = (mediaFinal != mediaParcial) ? "parcial " + mediaParcial : "nota " + mediaFinal;
+        return "Disciplina " + nome + " (" + getCreditos() + ")" + nota;
     }
     
     
