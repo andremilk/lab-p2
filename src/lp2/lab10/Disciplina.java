@@ -59,6 +59,7 @@ public abstract class Disciplina {
         this.setNome(nome);
         this.setEstado(Estado.CURSANDO);
         this.setPeriodo(periodo);
+        this.provas = new ArrayList<Prova>();
     }
     
     /**
