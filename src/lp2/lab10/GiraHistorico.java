@@ -16,7 +16,7 @@ public class GiraHistorico {
     public static void main(String[] args) {
         
         s_aluno = DataHandler.introMenu();
-        s_aluno.gerarHistorico();
+      //  s_aluno.gerarHistorico();
         while(flag == Flag.ATIVO) {
             switch(DataHandler.menu()) {
                 case 0:
@@ -26,23 +26,25 @@ public class GiraHistorico {
                     s_aluno.adicionarDisciplina(DataHandler.addDisciplinaMenu());
                     break;
                 case 2:
-                    Disciplina escolhida = 
-                        DataHandler.escolherDisciplina(s_aluno.getListaStatus(Estado.CURSANDO), DataHandler.ADICIONAR_PROVA);
-                    int index = s_aluno.getDisciplinas().indexOf(escolhida);
+                case 5:
+                    int escolhida = 
+                        DataHandler.escolherDisciplina(s_aluno);
                     try {
-                        s_aluno.getDisciplinas().get(index).adicionarProva();
+                        s_aluno.getDisciplinas().get(escolhida).adicionarProva();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     break;
-                    // aqui o aluno passa pra dataHandler as disciplinas que ele esta cursando para 
-                    // adicionar notas
-                    // e dataHandler volta o index da disciplina 
-                    // entao aluno.getdisciplinas.get(numero tal).addprova
-                    
-                        
-            }
-            
+                case 3:
+                    s_aluno.gerarParciais();
+                    break;
+                case 4:
+                    int quantoFinal = 
+                        DataHandler.escolherDisciplina(s_aluno);
+                    s_aluno.getDisciplinas().get(quantoFinal).quantoParaFinal();
+                    break;       
+                case 6:
+                    s_aluno.gerarHistorico();
         }
         
         
@@ -50,4 +52,5 @@ public class GiraHistorico {
     }
 
 
+}
 }
