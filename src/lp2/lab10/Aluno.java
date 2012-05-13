@@ -34,6 +34,7 @@ public class Aluno {
         this.setNome(nome);
         this.setMatricula(matricula);
         this.setCurso(curso);
+        this.disciplinas = new ArrayList<Disciplina>();
     }
     
     /**
@@ -123,6 +124,7 @@ public class Aluno {
         System.out.println(this);
         double produtos = 0;
         double carga = 0;
+        System.out.println("fi");
         for(Disciplina d: this.getListaStatus(Estado.CONCLUIDA)) {
             System.out.print(d);
             produtos += (d.getMediaFinal() * d.getCreditos());
