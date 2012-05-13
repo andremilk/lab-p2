@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class DataHandler {
     
     private static Scanner entrada = new Scanner(System.in);
-    public static final int ADICIONAR_PROVA = 1;
 
     public static double entradaNota(String message) {
         System.out.println(message);
@@ -40,19 +39,15 @@ public class DataHandler {
         return entrada.nextInt();
     }
     
-    public static Disciplina escolherDisciplina(ArrayList<Disciplina> disciplinas, int opcao) {
+    public static int escolherDisciplina(Aluno aluno) {
+        ArrayList<Disciplina> disciplinas = aluno.getListaStatus(Estado.CURSANDO);
         for(int i = 0; i <= disciplinas.size(); i++)
             System.out.println((i + 1) + ")" + disciplinas.get(i));
         System.out.println("Escolha a disciplina");
-        int escolha = entrada.nextInt();
-        switch(opcao) {
-            case 1:
-                return disciplinas.get(escolha - 1);
-               
-        }
-        return null;
         
+        return aluno.getDisciplinas().indexOf(disciplinas.get(entrada.nextInt()));
     }
+    
     public static Disciplina addDisciplinaMenu() {
         int tipo;
         
