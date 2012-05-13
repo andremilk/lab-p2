@@ -183,6 +183,52 @@ public abstract class Disciplina {
         System.out.println("Para a prova final voce precisa de: " + nota);
     }
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((estado == null) ? 0 : estado.hashCode());
+        long temp;
+        temp = Double.doubleToLongBits(mediaFinal);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(mediaParcial);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+        result = prime * result + periodo;
+        result = prime * result + ((provas == null) ? 0 : provas.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (!(obj instanceof Disciplina))
+            return false;
+        Disciplina other = (Disciplina) obj;
+        if (estado != other.estado)
+            return false;
+        if (Double.doubleToLongBits(mediaFinal) != Double.doubleToLongBits(other.mediaFinal))
+            return false;
+        if (Double.doubleToLongBits(mediaParcial) != Double.doubleToLongBits(other.mediaParcial))
+            return false;
+        if (nome == null) {
+            if (other.nome != null)
+                return false;
+        } else if (!nome.equals(other.nome))
+            return false;
+        if (periodo != other.periodo)
+            return false;
+        if (provas == null) {
+            if (other.provas != null)
+                return false;
+        } else if (!provas.equals(other.provas))
+            return false;
+        return true;
+    }
+
     /**
      * Metodo para checar se o aluno foi para final na disciplina
      * @return true se estiver na final, false caso contrario
