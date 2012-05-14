@@ -46,6 +46,11 @@ public class DataHandler {
     
     public static int escolherDisciplina(Aluno aluno) {
         ArrayList<Disciplina> disciplinas = aluno.getListaStatus(Estado.CURSANDO);
+        if(disciplinas.isEmpty()) {
+            System.out.println("Nao ha disciplinas sendo cursadas\n");
+            return -1;
+        }
+        
         for(int i = 0; i < disciplinas.size(); i++)
             System.out.println((i + 1) + ")" + disciplinas.get(i));
         System.out.println("Escolha a disciplina");
@@ -57,16 +62,18 @@ public class DataHandler {
         int tipo;
         
         do {
-            System.out.println("Escolha o tipo de disciplina\n1) Trimestral\n2)Semestral\n3)Anual");
+            System.out.println("Escolha o tipo de disciplina\n1) Trimestral\n2) Semestral\n3) Anual\n0) Voltar");
             System.out.println("Disciplina: ");
             tipo = entradaNum.nextInt();
+            if(tipo == 0)
+                return null;
         } while(tipo > 3 || tipo < 1);
         
         System.out.println("Nome da disciplina :");
         String nome = entradaString.nextLine();
         
         System.out.println("Periodo: ");
-        int periodo = entradaString.nextInt();
+        int periodo = entradaNum.nextInt();
         switch(tipo) {
             case 1:
                 return new DisciplinaTrimestral(nome, periodo);

@@ -30,10 +30,13 @@ public class DisciplinaTrimestral extends Disciplina {
     @Override
     public void adicionarProva() throws Exception {
         int tamLista = this.getProvas().size();
-        if(tamLista >= MAX_PROVAS)
-            return;
+        if(tamLista == MAX_PROVAS - 1) {
+            this.setEstado(Estado.CONCLUIDA);
+            
+        }    
         String message = "Digite a prova de numero" + (tamLista + 1);
         this.getProvas().add(new Prova((tamLista == 0 ? 4: 6), DataHandler.entradaNota(message)));
+        this.gerarParcial();
     }
 
     /**

@@ -32,9 +32,11 @@ public class DisciplinaAnual extends Disciplina {
     @Override
     public void adicionarProva() throws Exception {
         int tamLista = this.getProvas().size();
-        if(tamLista >= MAX_PROVAS)
+        if(tamLista == MAX_PROVAS - 1) {
+            this.setEstado(Estado.CONCLUIDA);
             return;
-        String message = "Digite a prova de numero" + (tamLista + 1);
+        }            
+        String message = "Digite a prova de numero " + (tamLista + 1);
         this.getProvas().add(new Prova((tamLista <= 5 ? 1: 4), DataHandler.entradaNota(message)));
     }
 

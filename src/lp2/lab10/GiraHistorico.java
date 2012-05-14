@@ -1,7 +1,5 @@
 package lp2.lab10;
 
-import java.util.Scanner;
-
 public class GiraHistorico {
 
     
@@ -10,13 +8,12 @@ public class GiraHistorico {
     }
     
     private static Flag flag = Flag.ATIVO;
-    private static Scanner entrada = new Scanner(System.in);
     private static Aluno s_aluno; 
    
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
-        s_aluno = DataHandler.introMenu();
-      //  s_aluno.gerarHistorico();
+        // s_aluno = DataHandler.introMenu();
+        s_aluno = new Aluno("Andre", 1235, "ciencia da comp");
         while(flag == Flag.ATIVO) {
             switch(DataHandler.menu()) {
                 case 0:
@@ -32,16 +29,21 @@ public class GiraHistorico {
                     try {
                         s_aluno.getDisciplinas().get(escolhida).adicionarProva();
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        break;
                     }
-                    break;
+                    
                 case 3:
                     s_aluno.gerarParciais();
                     break;
                 case 4:
                     int quantoFinal = 
                         DataHandler.escolherDisciplina(s_aluno);
-                    s_aluno.getDisciplinas().get(quantoFinal).quantoParaFinal();
+                    try {
+                        s_aluno.getDisciplinas().get(quantoFinal).quantoParaFinal();
+                    } catch (Exception e) {
+                        break;
+                    }
+                    
                     break;       
                 case 6:
                     s_aluno.gerarHistorico();
