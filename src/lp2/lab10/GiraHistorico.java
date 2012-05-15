@@ -12,8 +12,8 @@ public class GiraHistorico {
    
     public static void main(String[] args) throws Exception {
         
-        // s_aluno = DataHandler.introMenu();
-        s_aluno = new Aluno("Andre", 1235, "ciencia da comp");
+        s_aluno = DataHandler.introMenu();
+       
         while(flag == Flag.ATIVO) {
             switch(DataHandler.menu()) {
                 case 0:
