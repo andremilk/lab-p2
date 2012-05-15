@@ -102,6 +102,11 @@ public class Aluno {
     }
     
     public void gerarParciais() {
+        if(this.getListaStatus(Estado.CURSANDO).isEmpty()) {
+            System.out.println("Nao ha disciplinas sendo cursadas");
+            return;
+        }
+            
         for(Disciplina d: this.getListaStatus(Estado.CURSANDO)) {
             d.gerarParcial();
             System.out.println(d + "\n");
@@ -110,12 +115,11 @@ public class Aluno {
     }
     
     public ArrayList<Disciplina> getListaStatus(Estado estado) {
-        
         ArrayList<Disciplina> disciplinasStatus = new ArrayList<Disciplina>();
         
         if(!this.getDisciplinas().isEmpty())
             for(Disciplina d: this.getDisciplinas()) {
-                if(d.getEstado() == estado) {
+                if(d != null && d.getEstado() == estado) {
                     disciplinasStatus.add(d);
                 }
             }
