@@ -236,8 +236,8 @@ public abstract class Disciplina {
      */
     private boolean taNaFinal() {
         if(this.getMediaParcial() >= 7 || this.getMediaParcial() <= 4)
-            return true;
-        return false;
+            return false;
+        return true;
     }
     @Override
     public String toString() {
