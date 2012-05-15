@@ -144,7 +144,7 @@ public class Aluno {
             }
         
         if(this.getDisciplinas().size() != 0)
-            System.out.println("CRA ... " + produtos + " carga = " + carga);
+            System.out.println("CRA ... " + produtos/carga);
         else
             System.out.println("Sem disciplinas cursadas");
         

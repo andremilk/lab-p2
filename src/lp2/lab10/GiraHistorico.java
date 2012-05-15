@@ -28,6 +28,7 @@ public class GiraHistorico {
                         DataHandler.escolherDisciplina(s_aluno);
                     try {
                         s_aluno.getDisciplinas().get(escolhida).adicionarProva();
+                        break;
                     } catch (Exception e) {
                         break;
                     }

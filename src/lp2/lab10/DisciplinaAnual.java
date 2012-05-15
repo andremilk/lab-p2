@@ -36,6 +36,7 @@ public class DisciplinaAnual extends Disciplina {
             this.setEstado(Estado.CONCLUIDA);
             return;
         }            
+        
         String message = "Digite a prova de numero " + (tamLista + 1);
         this.getProvas().add(new Prova((tamLista <= 5 ? 1: 4), DataHandler.entradaNota(message)));
     }
@@ -47,8 +48,12 @@ public class DisciplinaAnual extends Disciplina {
     public void gerarParcial() {
         double primeiraParte = 0;
         ArrayList<Prova> p = this.getProvas();
-        for(int i = 0; i <= 4; i++) {
+        for(int i = 0; i < p.size(); i++) {
             primeiraParte += p.get(i).getNota();
+        }
+        if(p.size() < MAX_PROVAS) {
+            System.out.println("Nao ha notas suficientes cadastradas");
+            return;
         }
         this.setMediaParcial((((primeiraParte / 5) * 6) + (p.get(5).getNota() * p.get(5).getPeso()) / 10));
     }
